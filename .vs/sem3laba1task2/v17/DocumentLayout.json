@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alek-\\source\\repos\\sem3laba1task2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5C98817-2EC4-4DB2-8AF2-9F7A71313584}|sem3laba1task2\\sem3laba1task2.vcxproj|C:\\Users\\alek-\\source\\repos\\sem3laba1task2\\sem3laba1task2\\sem3laba1task2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A5C98817-2EC4-4DB2-8AF2-9F7A71313584}|sem3laba1task2\\sem3laba1task2.vcxproj|solutionrelative:sem3laba1task2\\sem3laba1task2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sem3laba1task2.cpp",
+              "DocumentMoniker": "C:\\Users\\alek-\\source\\repos\\sem3laba1task2\\sem3laba1task2\\sem3laba1task2.cpp",
+              "RelativeDocumentMoniker": "sem3laba1task2\\sem3laba1task2.cpp",
+              "ToolTip": "C:\\Users\\alek-\\source\\repos\\sem3laba1task2\\sem3laba1task2\\sem3laba1task2.cpp",
+              "RelativeToolTip": "sem3laba1task2\\sem3laba1task2.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-25T19:12:59.281Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
