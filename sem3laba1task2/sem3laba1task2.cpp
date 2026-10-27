@@ -132,7 +132,7 @@ public:
 private:
     unique_ptr<Node> root_;
 
-    static void collect(Node* node, vector<Node*>& result) {
+    void collect(Node* node, vector<Node*>& result) {
         result.push_back(node);
         for (const auto& child : node->children) {
             collect(child.get(), result);
