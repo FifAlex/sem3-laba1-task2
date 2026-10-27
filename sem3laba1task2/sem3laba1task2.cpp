@@ -123,9 +123,9 @@ public:
         parent->children.erase(it);
     }
 
-    void print(ostream& out, const function<string(const T&)>& formatter) const {
+    void print(int indent = 0) const {
         if (root_) {
-            printImpl(out, root_.get(), "", true, formatter);
+            printImpl(root_.get(), indent);
         }
     }
 
@@ -139,17 +139,15 @@ private:
         }
     }
 
-    static void printImpl(ostream& out, Node* node, const string& prefix, bool last,
-        const function<string(const T&)>& formatter) {
-        out << prefix << (node->parent ? (last ? "`-- " : "|-- ") : "")
-            << formatter(node->value) << '\n';
-        string nextPrefix = prefix;
-        if (node->parent) {
-            nextPrefix += last ? "    " : "|   ";
-        }
-        for (size_t i = 0; i < node->children.size(); ++i) {
-            printImpl(out, node->children[i].get(), nextPrefix,
-                i + 1 == node->children.size(), formatter);
+    void printImpl(Node* node, int indent) {
+        string pad(indent, ' ');
+
+        cout << pad
+             << "version " << node->value.id
+             << ": " << node->value.content << '\n';
+
+        for (const auto& child : node->children) {
+            printImpl(child.get(), indent + 2);
         }
     }
 };
@@ -250,17 +248,8 @@ public:
         byId_.erase(id);
     }
 
-    void print(ostream& out) const {
-        tree_.print(out, [](const Version& version) {
-            if (version.isInitial) {
-                return "version " + to_string(version.id) + " [initial content: \"" +
-                    version.initialContent + "\"]";
-            }
-            return "version " + to_string(version.id) + " [at " +
-                to_string(version.change.position) + ", removed: \"" +
-                version.change.removed + "\", inserted: \"" +
-                version.change.inserted + "\"]";
-            });
+    void print() const {
+        tree_.print();
     }
 
 private:
@@ -321,7 +310,7 @@ int main() {
         history.createVersion(6, 7, 0, "Hello", "Good morning");
 
         cout << "Version history and stored changes:\n";
-        history.print(cout);
+        history.print();
 
         cout << "\nReconstructed content of version 3: " << history.contentOf(3) << '\n';
         cout << "Reconstructed content of version 5: " << history.contentOf(5) << '\n';
